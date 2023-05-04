@@ -1,0 +1,43 @@
+# https://github.com/aws/serverless-application-model/issues/1553
+
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Updates any non OPTIONS method for an API gateway to require an API key
+
+Parameters:
+  ApiIds:
+    Type: CommaDelimitedList
+  StageName:
+    Type: String
+    Description: The api gateway stage name
+
+Globals:
+  Api:
+    OpenApiVersion: 3.0.1
+  Function:
+    Timeout: 30
+    Runtime: nodejs14.x
+    MemorySize: 256
+    CodeUri: src
+
+Resources:
+  EnableApiKeysForMethodsFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Description: Updates any non OPTIONS method for an API gateway to require an API key
+      Handler: main.handler
+      Policies:
+        - Statement:
+            - Sid: ModifyApiGatewayPolicy
+              Effect: Allow
+              Action:
+                - apigateway:*
+              Resource: '*'
+
+  EnableApiKeysForMethodsResource:
+    Type: Custom::EnableApiKeysForMethods
+    Properties:
+      ServiceToken: !GetAtt [EnableApiKeysForMethodsFunction, Arn]
+      ApiIds: !Ref ApiIds
+      StageName: !Ref StageName
