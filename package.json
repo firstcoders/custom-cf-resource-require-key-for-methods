@@ -1,6 +1,6 @@
 {
   "name": "@soundws/custom-cf-resource-require-key-for-methods",
-  "version": "1.0.3-beta.7",
+  "version": "1.0.3-beta.8",
   "description": "A custom cloudformation resource",
   "author": "The First Coders Team (https://www.firstcoders.co.uk)",
   "email": "support@firstcoders.co.uk",
@@ -22,7 +22,8 @@
     "node": ">=14"
   },
   "scripts": {
-    "build": "rm -rf .aws-sam dist && webpack --mode production && cp -R .aws-sam/build dist && rm -rf .aws-sam"
+    "build": "rm -rf .aws-sam dist && webpack --mode production && cp -R .aws-sam/build dist && rm -rf .aws-sam",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@aws-sdk/client-api-gateway": "^3.131.0",
