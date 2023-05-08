@@ -1,6 +1,6 @@
 {
   "name": "@soundws/custom-cf-resource-require-key-for-methods",
-  "version": "1.0.3-beta.6",
+  "version": "1.0.3-beta.7",
   "description": "A custom cloudformation resource",
   "author": "The First Coders Team (https://www.firstcoders.co.uk)",
   "email": "support@firstcoders.co.uk",
@@ -11,6 +11,9 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sound-ws/custom-cf-resource-require-key-for-methods.git"
@@ -28,14 +31,14 @@
   "devDependencies": {
     "aws-crt": "^1.15.15",
     "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^10.2.4",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "copy-webpack-plugin": "^10.2.4",
     "license-webpack-plugin": "^4.0.2",
+    "prettier": "^2.7.1",
     "terser-webpack-plugin": "^5.3.3",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
