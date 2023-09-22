@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4-beta.0](https://github.com/sound-ws/custom-cf-resource-require-key-for-methods/compare/@soundws/custom-cf-resource-require-key-for-methods@1.0.3...@soundws/custom-cf-resource-require-key-for-methods@1.0.4-beta.0) (2023-09-22)
+
+**Note:** Version bump only for package @soundws/custom-cf-resource-require-key-for-methods
+
+
+
+
+
 ## [1.0.3](https://github.com/sound-ws/custom-cf-resource-require-key-for-methods/compare/@soundws/custom-cf-resource-require-key-for-methods@1.0.3-beta.9...@soundws/custom-cf-resource-require-key-for-methods@1.0.3) (2023-05-13)
 
 **Note:** Version bump only for package @soundws/custom-cf-resource-require-key-for-methods
