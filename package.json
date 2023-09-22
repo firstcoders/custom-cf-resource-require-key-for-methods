@@ -1,6 +1,6 @@
 {
   "name": "@soundws/custom-cf-resource-require-key-for-methods",
-  "version": "1.0.4-beta.0",
+  "version": "1.0.4-beta.1",
   "description": "A custom cloudformation resource",
   "author": "The First Coders Team (https://www.firstcoders.co.uk)",
   "email": "support@firstcoders.co.uk",
