@@ -19,7 +19,7 @@
     "url": "https://github.com/sound-ws/custom-cf-resource-require-key-for-methods.git"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "scripts": {
     "build": "rm -rf .aws-sam dist && webpack --mode production && cp -R .aws-sam/build dist && rm -rf .aws-sam",
