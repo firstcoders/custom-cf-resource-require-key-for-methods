@@ -1,6 +1,6 @@
 {
   "name": "@soundws/custom-cf-resource-require-key-for-methods",
-  "version": "1.0.4-beta.1",
+  "version": "1.0.4-beta.2",
   "description": "A custom cloudformation resource",
   "author": "The First Coders Team (https://www.firstcoders.co.uk)",
   "email": "support@firstcoders.co.uk",
@@ -22,8 +22,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "rm -rf .aws-sam dist && webpack --mode production && cp -R .aws-sam/build dist && rm -rf .aws-sam",
-    "prepublishOnly": "npm run build"
+    "build": "rm -rf .aws-sam dist && webpack --mode production && cp -R .aws-sam/build dist && sam build",
+    "sam:publish": "sam package --template-file .aws-sam/build/template.yaml --output-template-file .aws-sam/build/packaged.yaml --s3-bucket $AWS_SAM_PACKAGE_BUCKET_NAME --region ${AWS_REGION:=us-east-1} && sam publish --template .aws-sam/build/packaged.yaml --region ${AWS_REGION:=us-east-1} --semantic-version $npm_package_version"
   },
   "dependencies": {
     "@aws-sdk/client-api-gateway": "^3.418.0",

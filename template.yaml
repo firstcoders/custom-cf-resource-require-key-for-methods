@@ -41,3 +41,17 @@ Resources:
       ServiceToken: !GetAtt [EnableApiKeysForMethodsFunction, Arn]
       ApiIds: !Ref ApiIds
       StageName: !Ref StageName
+
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: soundws-custom-cf-resource-require-key-for-methods
+    Description: >
+      AWS SAM has severe issues with parameterising the ApiKeyRequired property. This custom cloudformation resource will update any non-OPTIONS request method to set it to require an API key.
+    Author: Team First Coders
+    ReadmeUrl: README.md
+    SpdxLicenseId: MIT
+    LicenseUrl: LICENSE.txt
+    Labels: ['layer', 'lambda', 'serverless', 'cloudformation']
+    HomePageUrl: https://github.com/sound-ws/custom-cf-resource-require-key-for-methods
+    SourceCodeUrl: https://github.com/sound-ws/custom-cf-resource-require-key-for-methods
+    SemanticVersion: 1.0.0 # overwritten by sam publish cli command
