@@ -19,14 +19,13 @@ Globals:
     Timeout: 30
     Runtime: nodejs18.x
     MemorySize: 256
-    CodeUri: src
 
 Resources:
   EnableApiKeysForMethodsFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
       Description: Updates any non OPTIONS method for an API gateway to require an API key
-      Handler: main.handler
+      Handler: src/main.handler
       Policies:
         - Statement:
             - Sid: ModifyApiGatewayPolicy
@@ -34,6 +33,20 @@ Resources:
               Action:
                 - apigateway:*
               Resource: '*'
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Format: esm
+        OutExtension:
+          - .js=.mjs
+        Target: 'es2020'
+        Sourcemap: false
+        EntryPoints:
+          - src/main.js
+        External:
+          - '@aws-sdk'
+        Banner:
+          - js=import { createRequire } from 'module'; const require = createRequire(import.meta.url);
 
   EnableApiKeysForMethodsResource:
     Type: Custom::EnableApiKeysForMethods
