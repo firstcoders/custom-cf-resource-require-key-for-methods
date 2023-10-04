@@ -24,7 +24,8 @@
   },
   "scripts": {
     "qa": "sam validate --lint",
-    "build": "sam build",
+    "build": "sam build && npm run build:licenses",
+    "build:licenses": "node build/3rd-party-licenses.mjs",
     "prepublishOnly": "npm run build",
     "prepack": "rm -rf dist/ && mkdir -p dist/aws-sam && cp -R .aws-sam/build dist/aws-sam",
     "sam:publish": "npm run build && sam package --template-file .aws-sam/build/template.yaml --output-template-file .aws-sam/build/packaged.yaml --s3-bucket $AWS_SAM_PACKAGE_BUCKET_NAME --region $AWS_REGION && sam publish --template .aws-sam/build/packaged.yaml --region $AWS_REGION --semantic-version $npm_package_version"
@@ -35,6 +36,8 @@
   },
   "devDependencies": {
     "aws-crt": "^1.15.15",
+    "esbuild": "^0.19.4",
+    "esbuild-plugin-license": "^1.2.2",
     "eslint": "^8.50.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
