@@ -1,5 +1,6 @@
 {
   "name": "@firstcoders/custom-cf-resource-require-key-for-methods",
+  "private": true,
   "version": "1.0.6-beta.1",
   "description": "A custom cloudformation resource",
   "author": "The First Coders Team (https://www.firstcoders.co.uk)",
