@@ -29,7 +29,7 @@
     "build:licenses": "node build/3rd-party-licenses.mjs",
     "prepublishOnly": "npm run build",
     "prepack": "rm -rf dist/ && mkdir -p dist/aws-sam && cp -R .aws-sam/build dist/aws-sam",
-    "sam:publish": "npm run build && sam package --template-file .aws-sam/build/template.yaml --output-template-file .aws-sam/build/packaged.yaml --s3-bucket $AWS_SAM_PACKAGE_BUCKET_NAME --region $AWS_REGION && sam publish --template .aws-sam/build/packaged.yaml --region $AWS_REGION --semantic-version $npm_package_version"
+    "sam:publish:disabled": "npm run build && sam package --template-file .aws-sam/build/template.yaml --output-template-file .aws-sam/build/packaged.yaml --s3-bucket $AWS_SAM_PACKAGE_BUCKET_NAME --region $AWS_REGION && sam publish --template .aws-sam/build/packaged.yaml --region $AWS_REGION --semantic-version $npm_package_version"
   },
   "dependencies": {
     "@aws-sdk/client-api-gateway": "^3.614.0",
