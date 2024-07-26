@@ -57,7 +57,7 @@ Resources:
 
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: firstcoders-custom-cf-resource-require-key-for-methods
+    Name: fc-custom-cf-resource-require-key-for-methods
     Description: >
       AWS SAM has severe issues with parameterising the ApiKeyRequired property. This custom cloudformation resource will update any non-OPTIONS request method to set it to require an API key.
     Author: Team First Coders
