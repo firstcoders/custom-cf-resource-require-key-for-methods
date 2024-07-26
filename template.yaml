@@ -65,6 +65,6 @@ Metadata:
     SpdxLicenseId: MIT
     LicenseUrl: LICENSE.txt
     Labels: ['layer', 'lambda', 'serverless', 'cloudformation']
-    HomePageUrl: https://github.com/sound-ws/custom-cf-resource-require-key-for-methods
-    SourceCodeUrl: https://github.com/sound-ws/custom-cf-resource-require-key-for-methods
+    HomePageUrl: https://github.com/firstcoders/custom-cf-resource-require-key-for-methods
+    SourceCodeUrl: https://github.com/firstcoders/custom-cf-resource-require-key-for-methods
     SemanticVersion: 1.0.0 # overwritten by sam publish cli command
