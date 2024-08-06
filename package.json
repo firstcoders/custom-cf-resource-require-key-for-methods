@@ -32,7 +32,7 @@
     "sam:publish:disabled": "npm run build && sam package --template-file .aws-sam/build/template.yaml --output-template-file .aws-sam/build/packaged.yaml --s3-bucket $AWS_SAM_PACKAGE_BUCKET_NAME --region $AWS_REGION && sam publish --template .aws-sam/build/packaged.yaml --region $AWS_REGION --semantic-version $npm_package_version"
   },
   "dependencies": {
-    "@aws-sdk/client-api-gateway": "^3.614.0",
+    "@aws-sdk/client-api-gateway": "^3.621.0",
     "cfn-response-async": "^1.0.0"
   },
   "devDependencies": {
